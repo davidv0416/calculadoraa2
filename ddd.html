@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function valida_envia(){
+            if (document.forms["nuevo_cliente"].nombre.value.length!=0){
+                document.forms["nuevo_cliente"].submit("enviarDatosCliente()");
+            }else{
+                document.getElementById('nnombre').innerHTML="Ingrese el nombre";
+                document.forms["nuevo_cliente"].focus()
+            }
+        }
+        </script>
+        <div id="nnombre"></div>
+        <form name="nuevo_cliente">
+            <fieldset id="fiel1" Class="fielSet"><legend Class="legen1"> Ingrese la información </legend>
+                <table>
+                    <tr>
+                        <td><label Class="txtlabels" >Nombre:</label></td>
+                        <td><input id="txtNombre" name="nombre" type="text" Class="txtforms" maxlength="20" onkeypress="return validar_letras(event)"><label Class="txtObligatorio">*</label></td>
+                    </tr>
+                </table>
+                <br/>
+                <div Class="dvb">
+                    <input id="btningresar" type="button" value="Registrar" onclick="valida_envia()"  Class="button_01">
+                    <input id="btnlimpiar" type="reset" value="Limpiar" Class="button_01">
+                </div>
+                <br/>
+                <h3 id="tablas"><div id="resultado"></div></h3>
+            </fieldset>
+        </form>
+</body>
+</html>
